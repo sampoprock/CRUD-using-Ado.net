@@ -1,0 +1,33 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Mobile ID</th>
+        <th>Mobile Name</th>
+        <th>Price</th>
+        <th>Brand</th>
+        <th>Rating</th>
+        <th>Actions</th>
+    </tr>
+    @for (int i = 0; i < Model.Rows.Count; i++)
+    {
+        <tr>
+
+            <td>@Model.Rows[i][0]</td>
+            <td>@Model.Rows[i][1]</td>
+            <td>@Model.Rows[i][2]</td>
+            <td>@Model.Rows[i][3]</td>
+            <td>@Model.Rows[i][4]</td>
+            <td>
+                <a href="@Url.Action("Edit","Mobile",new {@id=Model.Rows[i][0]})">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="@Url.Action("Delete","Mobile",new {@id=Model.Rows[i][0]})">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="@Url.Action("Create","Mobile")">Add Product</a>
+

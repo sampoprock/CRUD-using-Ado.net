@@ -1,0 +1,25 @@
+1.Creating the Database
+
+QUERY-   CREATE DATABASE MobileReview;
+
+
+2.Creating the Table:
+
+Query- 
+GO
+CREATE TABLE [dbo].[Mobiles](
+       [MobileID] [int] IDENTITY(1,1) NOT NULL,
+       [MobileName] [varchar](250) ,
+       [MobilePrice] [varchar](250) ,
+       [MobileBrand] [decimal](18, 0),
+       [Rating] [int] NULL,
+ CONSTRAINT [PK_Mobiles] PRIMARY KEY CLUSTERED
+(
+       [MobileID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+Other Queries I've written Inline inside the appliaction
